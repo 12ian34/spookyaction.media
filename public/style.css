@@ -1,0 +1,563 @@
+/**********************************/
+
+
+/* body */
+
+
+/**********************************/
+
+body {
+    background-color: #010101 !important;
+    margin: 0;
+    padding: 0;
+}
+
+body.body-space {
+    background-color: #010101;
+    background-image: url("files/hudf.jpg");
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    display: inline-block;
+}
+
+#grad {
+    height: 200px;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgba(50, 255, 250, 0.1), rgba(50, 255, 50, 0.0));
+    position: absolute;
+    z-index: -100;
+}
+
+
+/**********************************/
+
+
+/* text */
+
+
+/**********************************/
+
+p {
+    font-family: "Courier New";
+    font-size: 20px;
+    color: #CCCCCC;
+}
+
+h1 {
+    color: #CCCCCC;
+    font-family: "Courier New";
+    font-weight: 100;
+    font-size: 30px;
+    /*margin: 0;
+ padding: 0;
+ text-align: center;
+ position: absolute;
+ display: inline-block;*/
+}
+
+a {
+    font-family: "Courier New";
+    font-size: 20px;
+    color: #CCCCCC;
+}
+
+
+/**********************************/
+
+
+/* links */
+
+
+/**********************************/
+
+a:link,
+.nav-top a:link {
+    /* unvisited */
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+a:visited,
+.nav-top a:visited {
+    color: #FFFFFF;
+    text-decoration: line-through;
+}
+
+a:hover,
+.nav-top a:hover {
+    color: #00FF34;
+    text-decoration: underline;
+}
+
+a:active,
+.nav-top a:active {
+    /* click and hold */
+    color: #029210;
+    text-decoration: underline;
+}
+
+a.active,
+.nav-top a.active {
+    color: #00FF34;
+    background-color: rgba(40, 40, 40, 0.7);
+}
+
+
+/**********************************/
+
+
+/* about */
+
+
+/**********************************/
+
+
+/*
+.about {
+ margin: auto;
+ width: 100%;
+}*/
+
+
+/*.about-heading {
+ color: #FFFFFF;
+ text-align: center;
+ padding: 30px 30px;
+ text-decoration: none;
+ font-size: 20px;
+}
+
+.about-item {
+ color: #FFFFFF;
+ text-align: center;
+ padding: 30px 30px;
+ text-decoration: none;
+ font-size: 20px;
+}*/
+
+
+/**********************************/
+
+
+/* nav-top */
+
+
+/**********************************/
+
+.nav-top,
+.nav-top-right {
+    overflow: hidden;
+    border-bottom: 2px solid white;
+}
+
+.nav-top-right {
+    float: right;
+    border-bottom: 2px transparent;
+}
+
+.nav-top a,
+.nav-top-right a {
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    float: left;
+    width: 85px;
+}
+
+
+/**********************************/
+
+
+/* nav-btm */
+
+
+/**********************************/
+
+.nav-btm {
+    border-top: 2px solid white;
+    background-color: transparent;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* 
+#mce_text {
+    font-family: "Courier New";
+    font-size: 14px;
+    float: left;
+    display: block;
+}
+
+#mce-EMAIL {
+    font-family: "Courier New";
+    font-size: 14px;
+    color: #CCCCCC;
+    background: transparent;
+    border: none;
+    float: left;
+    display: block;
+}
+
+#mc-embedded-subscribe {
+    font-family: "Courier New";
+    font-size: 14px;
+    color: #CCCCCC;
+    background: transparent;
+    display: block;
+    float: left;
+}
+ */
+
+#mc_embed_signup form {
+    text-align: center;
+    padding: 10px 0 10px 0;
+}
+
+.mc-field-group {
+    display: inline-block;
+}
+
+
+/* positions input field horizontally */
+
+#mc_embed_signup input.email {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+    border: 1px solid #CCCCCC;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #00FF34;
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 32px;
+    padding: 0px 0.4em;
+    display: inline-block;
+    margin: 0;
+    width: 270px;
+    vertical-align: top;
+}
+
+#mc_embed_signup label {
+    display: block;
+    font-size: 16px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+#mc_embed_signup .clear {
+    display: inline-block;
+}
+
+
+/* positions button horizontally in line with input */
+
+#mc_embed_signup .button {
+    font-size: 13px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    letter-spacing: .03em;
+    color: #CCCCCC;
+    background-color: transparent;
+    box-sizing: border-box;
+    height: 32px;
+    line-height: 32px;
+    padding: 0 18px;
+    display: inline-block;
+    margin: 0;
+    transition: all 0.23s ease-in-out 0s;
+}
+
+#mc_embed_signup .button:hover {
+    /* background-color: #777; */
+    color: #00FF34;
+    cursor: pointer;
+    border: 1px solid #CCCCCC;
+}
+
+#mc_embed_signup div#mce-responses {
+    float: left;
+    top: -1.4em;
+    padding: 0em .5em 0em .5em;
+    overflow: hidden;
+    width: 90%;
+    margin: 0 5%;
+    clear: both;
+}
+
+#mc_embed_signup div.response {
+    margin: 1em 0;
+    padding: 1em .5em .5em 0;
+    font-weight: bold;
+    float: left;
+    top: -1.5em;
+    z-index: 1;
+    width: 80%;
+}
+
+#mc_embed_signup #mce-error-response {
+    display: none;
+}
+
+#mc_embed_signup #mce-success-response {
+    color: #529214;
+    display: none;
+}
+
+#mc_embed_signup label.error {
+    display: block;
+    float: none;
+    width: auto;
+    margin-left: 1.05em;
+    text-align: left;
+    padding: .5em 0;
+}
+
+#mc_embed_signup {
+    background: transparent;
+    clear: left;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+}
+
+@media (max-width: 445px) {
+    #mc_embed_signup input.email {
+        /* width: 100%; */
+        margin-bottom: 5px;
+    }
+    #mc_embed_signup .clear {
+        display: block;
+        width: 100%
+    }
+    #mc_embed_signup .button {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+
+/**********************************/
+
+
+/* mobile */
+
+
+/**********************************/
+
+@media only screen and (max-width: 445px) {
+    .nav-top-right {
+        float: left !important;
+    }
+}
+
+
+/**********************************/
+
+
+/* images */
+
+
+/**********************************/
+
+img {
+    max-width: 90%;
+    max-height: 500px;
+    height: auto;
+    display: block;
+    padding: 10px 10px 10px 10px;
+    margin: auto;
+}
+
+figcaption {
+    color: #CCCCCC;
+    font-family: "Courier New";
+    font-weight: 50;
+    font-size: 14px;
+}
+
+.column {
+    width: 100%;
+    overflow: auto;
+    display: none;
+    /* Hide columns by default */
+}
+
+.show {
+    display: block;
+}
+
+.btn {
+    border: none;
+    outline: none;
+    padding: 8px 8px;
+    margin: 2px 0px 4px 2px;
+    background-color: #222222;
+    cursor: pointer;
+    color: #CCCCCC;
+    width: 150px;
+    font-family: "Courier New";
+    font-weight: 50;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #444444;
+    color: #00FF34;
+}
+
+.btn.active* {
+    background-color: #444444;
+    color: #00FF34;
+}
+
+
+/**********************************/
+
+
+/* image shake */
+
+
+/**********************************/
+
+img.ian:hover,
+img.moon:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+
+/**********************************/
+
+
+/* ian */
+
+
+/**********************************/
+
+img.ian {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 300px;
+    max-width: 225px;
+    width: 50%;
+}
+
+
+/**********************************/
+
+
+/* the moon */
+
+
+/**********************************/
+
+img.moon {
+    max-width: 40%;
+    height: auto;
+}
+
+.moon {
+    position: relative;
+    z-index: 100;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-height: 400px;
+    max-width: 100px;
+    margin-top: 100px;
+    -webkit-animation: myOrbit 8s linear infinite;
+    -moz-animation: myOrbit 8s linear infinite;
+    -o-animation: myOrbit 8s linear infinite;
+    animation: myOrbit 8s linear infinite;
+}
+
+@-webkit-keyframes myOrbit {
+    from {
+        -webkit-transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
+
+@-moz-keyframes myOrbit {
+    from {
+        -moz-transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        -moz-transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
+
+@-o-keyframes myOrbit {
+    from {
+        -o-transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        -o-transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
+
+@keyframes myOrbit {
+    from {
+        transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+}
