@@ -58,6 +58,14 @@ button:active {
     box-shadow: none;
 }
 
+button#stop:hover {
+    color: #ff6600;
+}
+
+button#stop:active {
+    color: #890606;
+}
+
 
 /* text */
 
