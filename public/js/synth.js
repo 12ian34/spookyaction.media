@@ -5,8 +5,8 @@ document.getElementById('tone').addEventListener('click', synthTone)
 async function synthTone() {
     console.log('test')
     await Tone.start()
-	console.log('audio is ready')
-    // create two monophonic synths
+    console.log('audio is ready')
+        // create two monophonic synths
     const synthA = new Tone.FMSynth().toDestination();
     const synthB = new Tone.AMSynth().toDestination();
     //play a note every quarter-note
@@ -19,6 +19,6 @@ async function synthTone() {
     }, "4n").start("8n");
     // the loops start when the Transport is started
     Tone.Transport.start()
-    // ramp up to 800 bpm over 10 seconds
+        // ramp up to 800 bpm over 10 seconds
     Tone.Transport.bpm.rampTo(800, 10);
 }

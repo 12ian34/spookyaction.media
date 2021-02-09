@@ -1,10 +1,9 @@
-/**********************************/
-
-
 /* body */
 
-
-/**********************************/
+html {
+    margin: 0;
+    padding: 0;
+}
 
 body {
     background-color: #010101 !important;
@@ -37,13 +36,30 @@ body.body-space {
 }
 
 
-/**********************************/
+/* experiments */
+
+button {
+    color: #FFFFFF;
+    font-size: 20px;
+    background-color: rgba(40, 40, 40, 0.7);
+    padding: 5px 15px;
+    border: 2px solid white;
+    cursor: pointer;
+    box-shadow: 7px 7px #FFFFFF;
+}
+
+button:hover {
+    color: #00FF34;
+}
+
+button:active {
+    color: #029210;
+    transform: translate(7px, 7px);
+    box-shadow: none;
+}
 
 
 /* text */
-
-
-/**********************************/
 
 p {
     font-family: "Courier New";
@@ -65,18 +81,12 @@ h1 {
 
 a {
     font-family: "Courier New";
-    font-size: 20px;
+    font-size: 18px;
     color: #CCCCCC;
 }
 
 
-/**********************************/
-
-
 /* links */
-
-
-/**********************************/
 
 a:link,
 .nav-top a:link {
@@ -111,13 +121,7 @@ a.active,
 }
 
 
-/**********************************/
-
-
 /* about */
-
-
-/**********************************/
 
 
 /*
@@ -144,13 +148,7 @@ a.active,
 }*/
 
 
-/**********************************/
-
-
 /* nav-top */
-
-
-/**********************************/
 
 .nav-top,
 .nav-top-right {
@@ -170,19 +168,13 @@ a.active,
     text-align: center;
     padding: 10px 10px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     float: left;
-    width: 85px;
+    /* width: 85px; */
 }
 
 
-/**********************************/
-
-
 /* nav-btm */
-
-
-/**********************************/
 
 .nav-btm {
     border-top: 2px solid white;
@@ -354,28 +346,16 @@ a.active,
 }
 
 
-/**********************************/
-
-
 /* mobile */
 
-
-/**********************************/
-
-@media only screen and (max-width: 445px) {
+@media only screen and (max-width: 375px) {
     .nav-top-right {
         float: left !important;
     }
 }
 
 
-/**********************************/
-
-
 /* images */
-
-
-/**********************************/
 
 img {
     max-width: 90%;
@@ -429,13 +409,7 @@ figcaption {
 }
 
 
-/**********************************/
-
-
 /* image shake */
-
-
-/**********************************/
 
 img.ian:hover,
 img.moon:hover {
@@ -480,13 +454,7 @@ img.moon:hover {
 }
 
 
-/**********************************/
-
-
 /* ian */
-
-
-/**********************************/
 
 img.ian {
     display: block;
@@ -498,13 +466,7 @@ img.ian {
 }
 
 
-/**********************************/
-
-
 /* the moon */
-
-
-/**********************************/
 
 img.moon {
     max-width: 40%;
