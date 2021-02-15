@@ -49,28 +49,40 @@
             <div>
                 <button id="stop">stop</button>
             </div>
-            <div>
-                <button id="change" onclick="parameterChanges()">change</button>
-            </div>
         </div>
 
         <div class="flex-container" id="parameterChanges">
             <div>
+                <button id="changeDistortion" onclick="changeDistortion()">distortion</button>
+            </div>
+            <div>
                 <form>
-                    <label for="quantity">distortion:</label>
-                    <input type="number" id="inputDistortion" name="dist" min="0" max="1" step="0.1">
+                    <label for="quantity" id="inputDistortionLabel">distortion:</label>
+                    <input type="number" id="inputDistortion" name="dist" min="0" max="1" step="0.1" value="0">
+                </form>
+            </div>
+            <div>
+                <button id="changePingPong" onclick="changePingPong()">ping pong</button>
+            </div>
+            <div>
+                <form>
+                    <label for="quantity"id="inputPingPongDelayLabel">ping pong delay:</label>
+                    <input type="number" id="inputPingPongDelay" name="pp" min="1" max="64" step="1" value="0">
                 </form>
             </div>
             <div>
                 <form>
-                    <label for="quantity">ping pong:</label>
-                    <input type="number" id="inputPingPong" name="pp" min="1" max="64" step="1">
+                    <label for="quantity" id="inputPingPongFeedbackLabel">ping pong feedback:</label>
+                    <input type="number" id="inputPingPongFeedback" name="pp" min="0" max="1" step="0.1" value="0.5">
                 </form>
             </div>
             <div>
+                <button id="changeReverb" onclick="changeReverb()">reverb</button>
+            </div>
+            <div>
                 <form>
-                    <label for="quantity">reverb:</label>
-                    <input type="number" id="inputReverb" name="rv" min="0" max="10" step="1">
+                    <label for="quantity" id="inputReverbLabel">reverb:</label>
+                    <input type="number" id="inputReverb" name="rv" min="0" max="30" step="1" value="0">
                 </form>
             </div>
         </div>
