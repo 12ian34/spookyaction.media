@@ -2,10 +2,41 @@
 // console.log(inputDistortion)
 // console.log(inputDistortion.value)
 
-let inputDistortion = document.getElementById('inputDistortion');
-let inputPingPongDelay = document.getElementById('inputPingPongDelay');
-let inputPingPongFeedback = document.getElementById('inputPingPongFeedback');
-let inputReverb = document.getElementById('inputReverb');
+// const { addListener } = require("process");
+
+var inputDistortion = document.getElementById('inputDistortion');
+var inputDistortionLabel = document.getElementById("inputDistortionLabel");
+var inputPingPongDelay = document.getElementById('inputPingPongDelay');
+var inputPingPongDelayLabel = document.getElementById("inputPingPongDelayLabel");
+var inputPingPongFeedback = document.getElementById('inputPingPongFeedback');
+var inputPingPongFeedbackLabel = document.getElementById('inputPingPongFeedbackLabel');
+var inputReverb = document.getElementById("inputReverb");
+var inputReverbLabel = document.getElementById("inputReverbLabel");
+
+var distortionElements = [
+    inputDistortion,
+    inputDistortionLabel,
+]
+
+var pingPongElements = [
+    inputPingPongDelay,
+    inputPingPongDelayLabel,
+    inputPingPongFeedback,
+    inputPingPongFeedbackLabel,
+]
+
+var reverbElements = [
+    inputReverb,
+    inputReverbLabel,
+]
+
+var storedParameters = [
+    inputDistortion,
+    inputReverb,
+    inputPingPongDelay,
+    inputPingPongFeedback,
+    inputReverb,
+]
 
 // var inputDataSynth = {
 //     'inputDistortion': 0,
@@ -26,81 +57,65 @@ let inputReverb = document.getElementById('inputReverb');
 //     inputReverb.value = JSON.parse(inputDataSynth("inputReverb");
 // }
 
-if (localStorage.getItem("inputDistortion")) {
-    inputDistortion.value = localStorage.getItem("inputDistortion");
+
+function getFromLocalStorage(parameter) {
+    if (localStorage.getItem(String(parameter.id))) {
+        parameter.value = localStorage.getItem(String(parameter.id));
+    }
 }
 
-if (localStorage.getItem("inputPingPongDelay")) {
-    inputPingPongDelay.value = localStorage.getItem("inputPingPongDelay");
+for (let i = 0; i < storedParameters.length; i++) {
+    getFromLocalStorage(storedParameters[i]);
 }
 
-if (localStorage.getItem("inputPingPongFeedback")) {
-    inputPingPongFeedback.value = localStorage.getItem("inputPingPongFeedback");
+
+function createEventListener(parameter) {
+    parameter.addEventListener("change", function() {
+        localStorage.setItem(String(parameter.id), parameter.value);
+    });
 }
 
-if (localStorage.getItem("inputReverb")) {
-    inputReverb.value = localStorage.getItem("inputReverb");
+for (let i = 0; i < storedParameters.length; i++) {
+    createEventListener(storedParameters[i]);
 }
 
-inputDistortion.addEventListener("change", function() {
-    localStorage.setItem("inputDistortion", inputDistortion.value);
-});
-inputPingPongDelay.addEventListener("change", function() {
-    localStorage.setItem("inputPingPongDelay", inputPingPongDelay.value);
-});
-inputPingPongFeedback.addEventListener("change", function() {
-    localStorage.setItem("inputPingPongFeedback", inputPingPongFeedback.value);
-});
-inputReverb.addEventListener("change", function() {
-    localStorage.setItem("inputReverb", inputReverb.value);
-});
+// inputDistortion.addEventListener("change", function() {
+//     localStorage.setItem("inputDistortion", inputDistortion.value);
+// });
+// inputPingPongDelay.addEventListener("change", function() {
+//     localStorage.setItem("inputPingPongDelay", inputPingPongDelay.value);
+// });
+// inputPingPongFeedback.addEventListener("change", function() {
+//     localStorage.setItem("inputPingPongFeedback", inputPingPongFeedback.value);
+// });
+// inputReverb.addEventListener("change", function() {
+//     localStorage.setItem("inputReverb", inputReverb.value);
+// });
+
+
+function hideElements(parameter) {
+    if (parameter.style.display === "none") {
+        parameter.style.display = "block";
+    } else {
+        parameter.style.display = "none"
+    }
+}
 
 function changeDistortion() {
-    var parameterChangeFlexDistortion = document.getElementById("inputDistortion");
-    if (parameterChangeFlexDistortion.style.display === "none") {
-        parameterChangeFlexDistortion.style.display = "block";
-    } else {
-        parameterChangeFlexDistortion.style.display = "none";
+    for (let i = 0; i < distortionElements.length; i++) {
+        hideElements(distortionElements[i]);
     }
 }
 
 function changePingPong() {
-    var parameterChangeFlexDelay = document.getElementById("inputPingPongDelay");
-    var parameterChangeFlexDelayLabel = document.getElementById("inputPingPongDelayLabel");
-    var parameterChangeFlexFeedback = document.getElementById("inputPingPongFeedback");
-    var parameterChangeFlexFeedbackLabel = document.getElementById("inputPingPongFeedbackLabel");
-
-    if (parameterChangeFlexDelay.style.display === "none") {
-        parameterChangeFlexDelay.style.display = "block";
-    } else {
-        parameterChangeFlexDelay.style.display = "none";
-    }
-
-    if (parameterChangeFlexFeedback.style.display === "none") {
-        parameterChangeFlexFeedback.style.display = "block";
-    } else {
-        parameterChangeFlexFeedback.style.display = "none";
-    }
-
-    if (parameterChangeFlexDelayLabel.style.display === "none") {
-        parameterChangeFlexDelayLabel.style.display = "block";
-    } else {
-        parameterChangeFlexDelayLabel.style.display = "none";
-    }
-
-    if (parameterChangeFlexFeedbackLabel.style.display === "none") {
-        parameterChangeFlexFeedbackLabel.style.display = "block";
-    } else {
-        parameterChangeFlexFeedbackLabel.style.display = "none";
+    for (let i = 0; i < pingPongElements.length; i++) {
+        hideElements(pingPongElements[i]);
     }
 }
 
 function changeReverb() {
-    var parameterChangeFlexReverb = document.getElementById("inputReverb");
-    if (parameterChangeFlexReverb.style.display === "none") {
-        parameterChangeFlexReverb.style.display = "block";
-    } else {
-        parameterChangeFlexReverb.style.display = "none";
+    for (let i = 0; i < reverbElements.length; i++) {
+        hideElements(reverbElements[i]);
     }
 }
 
@@ -113,7 +128,7 @@ function synthSoundsStop() {
 
     Tone.Transport.stop()
     Tone.Transport.cancel()
-    // Tone.PolySynth.disconnect()
+        // Tone.PolySynth.disconnect()
 
 }
 
@@ -158,7 +173,7 @@ async function synthTone() {
     // synth.set({ detune: -1200 });
     synth.triggerAttackRelease(["C4", "E4", "A4"], "2n").connect(pingPong).connect(reverb).connect(distortion);
 
-    synth.triggerAttackRelease(["C4", "E4", "A4"], "2n", now+0.5).connect(pingPong).connect(reverb).connect(distortion);
+    synth.triggerAttackRelease(["C4", "E4", "A4"], "2n", now + 0.5).connect(pingPong).connect(reverb).connect(distortion);
 
 
 
