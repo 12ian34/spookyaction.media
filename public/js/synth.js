@@ -30,13 +30,20 @@ var reverbElements = [
     inputReverbLabel,
 ]
 
-var storedParameters = [
+var storableParameters = [
     inputDistortion,
     inputReverb,
     inputPingPongDelay,
     inputPingPongFeedback,
     inputReverb,
 ]
+
+document.getElementById('sounds').addEventListener('click', synthTone)
+document.getElementById('stop').addEventListener('click', synthSoundsStop)
+
+document.getElementById('showHideDistortion').addEventListener('click', showHideDistortion)
+document.getElementById('showHidePingPong').addEventListener('click', showHidePingPong)
+document.getElementById('showHideReverb').addEventListener('click', showHideReverb)
 
 // var inputDataSynth = {
 //     'inputDistortion': 0,
@@ -57,41 +64,17 @@ var storedParameters = [
 //     inputReverb.value = JSON.parse(inputDataSynth("inputReverb");
 // }
 
-
 function getFromLocalStorage(parameter) {
     if (localStorage.getItem(String(parameter.id))) {
         parameter.value = localStorage.getItem(String(parameter.id));
     }
 }
 
-for (let i = 0; i < storedParameters.length; i++) {
-    getFromLocalStorage(storedParameters[i]);
-}
-
-
-function createEventListener(parameter) {
+function storeParameterChanges(parameter) {
     parameter.addEventListener("change", function() {
         localStorage.setItem(String(parameter.id), parameter.value);
     });
 }
-
-for (let i = 0; i < storedParameters.length; i++) {
-    createEventListener(storedParameters[i]);
-}
-
-// inputDistortion.addEventListener("change", function() {
-//     localStorage.setItem("inputDistortion", inputDistortion.value);
-// });
-// inputPingPongDelay.addEventListener("change", function() {
-//     localStorage.setItem("inputPingPongDelay", inputPingPongDelay.value);
-// });
-// inputPingPongFeedback.addEventListener("change", function() {
-//     localStorage.setItem("inputPingPongFeedback", inputPingPongFeedback.value);
-// });
-// inputReverb.addEventListener("change", function() {
-//     localStorage.setItem("inputReverb", inputReverb.value);
-// });
-
 
 function hideElements(parameter) {
     if (parameter.style.display === "none") {
@@ -101,28 +84,23 @@ function hideElements(parameter) {
     }
 }
 
-function changeDistortion() {
+function showHideDistortion() {
     for (let i = 0; i < distortionElements.length; i++) {
         hideElements(distortionElements[i]);
     }
 }
 
-function changePingPong() {
+function showHidePingPong() {
     for (let i = 0; i < pingPongElements.length; i++) {
         hideElements(pingPongElements[i]);
     }
 }
 
-function changeReverb() {
+function showHideReverb() {
     for (let i = 0; i < reverbElements.length; i++) {
         hideElements(reverbElements[i]);
     }
 }
-
-// function getParameters() {
-//     distortion_value = document.getElementById("distortionValue").value
-//     return distortion_value
-// }
 
 function synthSoundsStop() {
 
@@ -138,10 +116,6 @@ function synthSoundsStop() {
 //         // updatePricingFunction();
 //     }
 // }
-
-// distortion_value.addEventListener("keyup", getParameters() {
-//     sessionStorage.setItem("autosave", myInput.value);
-// });
 
 async function synthTone() {
 
@@ -175,13 +149,15 @@ async function synthTone() {
 
     synth.triggerAttackRelease(["C4", "E4", "A4"], "2n", now + 0.5).connect(pingPong).connect(reverb).connect(distortion);
 
-
-
-
     // ramp up to 800 bpm over 10 seconds
     // Tone.Transport.bpm.rampTo(120, 10);
 
 }
 
-document.getElementById('sounds').addEventListener('click', synthTone)
-document.getElementById('stop').addEventListener('click', synthSoundsStop)
+for (let i = 0; i < storableParameters.length; i++) {
+    getFromLocalStorage(storableParameters[i]);
+}
+
+for (let i = 0; i < storableParameters.length; i++) {
+    storeParameterChanges(storableParameters[i]);
+}
