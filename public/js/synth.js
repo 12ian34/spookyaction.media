@@ -54,11 +54,13 @@ var elementsPingPong = [
 var elementsReverb = [
     inputReverb,
     inputReverbLabel,
+    inputReverbValue,
 ];
 
 var elementsPitchShift = [
     inputPitchShift,
     inputPitchShiftLabel,
+    inputPitchShiftValue,
 ];
 
 var storableParameters = [
